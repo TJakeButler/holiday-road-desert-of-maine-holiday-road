@@ -11,10 +11,9 @@ export const getParks = () => {
   
 .then(response => response.json())
 .then (parsedParks => {
-   parks = parsedParks
+   parks = parsedParks.data
     console.log(parks)
 })
 }
-
 
 
