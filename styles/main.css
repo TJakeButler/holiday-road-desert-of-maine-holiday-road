@@ -1,0 +1,64 @@
+h1, h3 {
+    text-align: center;
+}
+
+.container {
+
+
+}
+
+.headerContainer {
+    border: 1px solid;
+    padding: 5px;
+
+}
+
+.mainContainer {
+    border: 1px solid;
+    padding: 5px;
+    display: flex;
+}
+
+.mainContainerLeft {
+    border: 1px solid;
+    padding: 5px;
+    flex-grow: 2;
+}
+
+.mainContainerRight {
+    border: 1px solid;
+    padding: 5px;
+    flex-grow: 1;
+}
+.dropDownContainer {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.itineraryPreviewContainer {
+    border: 1px solid;
+    padding: 5px;
+    display: flex;
+}
+
+.previewLeftContainer {
+    border: 1px solid;
+    padding: 5px;
+    flex-grow: 1; 
+}
+
+.previewRightContainer {
+    border: 1px solid;
+    padding: 5px;
+    flex-grow: 1;
+}
+
+.attractionContainer {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.eateryContainer {
+    border: 1px solid;
+    padding: 5px;
+}
