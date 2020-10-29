@@ -1,10 +1,6 @@
-import{useParks , getParks} from "./parks/ParkProvider.js"
+import { ParkSelect } from "./parks/ParkSelect.js"
 
-
-
-getParks().then(() => {
-console.log(useParks())
-});
+ParkSelect()
 
 
 
