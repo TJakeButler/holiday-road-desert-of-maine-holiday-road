@@ -1,8 +1,6 @@
 import { useParks , getParks } from "./ParkProvider.js"
 
-
 const contentTarget = document.querySelector(".dropDownContainer")
-
 
 export const ParkSelect = () => {
     getParks().then(() => {
@@ -11,8 +9,6 @@ export const ParkSelect = () => {
         render(parks)
     })
 }
-
-
 const render = (parksCollection) => {
     contentTarget.innerHTML = `
     <select class="dropdown" id="parkSelect">
@@ -25,7 +21,6 @@ const render = (parksCollection) => {
     </select>
     `
 }
-
 const eventHub = document.querySelector(".container")
 
 // On the event hub, listen for a "change" event.
@@ -47,3 +42,4 @@ eventHub.addEventListener("change", (changeEvent) => {
 
     }
 })
+
