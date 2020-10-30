@@ -1,8 +1,9 @@
 export const Park = (parkObj) => {
     return `
     <div class="park">
-            <p class="park__name">${parkObj.fullName}</p>
-            <img src="${parkObj.images[0].url}" alt="Picture of the Park" width="250">
-    </div>
-    `
+            <p class="park__name">${parkObj.fullName}
+                <button id="detail--${parkObj.id}" type="button">Details</button>
+                </p>
+                </div>
+                `
 }

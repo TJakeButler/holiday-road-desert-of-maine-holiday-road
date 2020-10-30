@@ -1,8 +1,6 @@
 import { useParks , getParks } from "./ParkProvider.js"
 
-
 const contentTarget = document.querySelector(".dropDownContainer")
-
 
 export const ParkSelect = () => {
     getParks().then(() => {
@@ -11,8 +9,6 @@ export const ParkSelect = () => {
         render(parks)
     })
 }
-
-
 const render = (parksCollection) => {
     contentTarget.innerHTML = `
     <select class="dropdown" id="parkSelect">
@@ -25,7 +21,6 @@ const render = (parksCollection) => {
     </select>
     `
 }
-
 const eventHub = document.querySelector(".container")
 
 // On the event hub, listen for a "change" event.
@@ -47,3 +42,32 @@ eventHub.addEventListener("change", (changeEvent) => {
 
     }
 })
+
+// Detail Button Custom Event
+eventHub.addEventListener("click", (clickEvent) => {
+    console.log("click event", clickEvent)
+    // Only do this if the `crimeSelect` element was changed
+    if (clickEvent.target.id.includes("detail--")) {
+    const[prefix, parkId] = clickEvent.target.id.split("detail--")
+ 
+        // Create custom event. Provide an appropriate name.
+        const customDetailEvent = new CustomEvent("detailButtonChosen", {
+            detail: {
+                detailThatWasShown: parkId
+            }
+        })
+        console.log(customDetailEvent)
+        // Dispatch to event hub
+        eventHub.dispatchEvent(customDetailEvent)
+    }
+})
+
+// const inventory = [
+//     {name: 'apples', quantity: 2},
+//     {name: 'bananas', quantity: 0},
+//     {name: 'cherries', quantity: 5}
+//   ];
+
+// // const found = array1.find(element => element > 10);
+// const result = inventory.find( ({ name }) => name === 'cherries' );
+// console.log(result) // { name: 'cherries', quantity: 5 }
