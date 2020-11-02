@@ -12,7 +12,7 @@ eventHub.addEventListener('eateryChosen', event => {
             Filter the criminals application state down to the people that committed the crime
         */
         const appEateries = useEateries()
-       const matchingEatery = appEateries.filter(currentEatery=> {
+       const matchingEatery = appEateries.find(currentEatery=> {
         
             return currentEatery.id === parseInt(event.detail.eateryThatWasChosen)
             
@@ -26,12 +26,10 @@ eventHub.addEventListener('eateryChosen', event => {
   
 const contentTarget = document.querySelector(".eateryContainer")
 
-const renderEatery = (matchingEatery) => {
+const renderEatery = (singleEatery) => {
     let eateryHTMLRepresentations = ""
-    for (const singleEatery of matchingEatery) {
         eateryHTMLRepresentations += Eatery(singleEatery) 
-    }
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML += `
             <h3>${eateryHTMLRepresentations}</h3>
           `
   }
