@@ -21,6 +21,7 @@ const render = (parksCollection) => {
     </select>
     `
 }
+
 const eventHub = document.querySelector(".container")
 
 // On the event hub, listen for a "change" event.
