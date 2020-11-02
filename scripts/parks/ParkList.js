@@ -13,7 +13,7 @@ eventHub.addEventListener('parkChosen', event => {
             Filter the criminals application state down to the people that committed the crime
         */
         const appStateParks = useParks()
-        const matchingParks = appStateParks.filter(currentpark => {
+        const matchingParks = appStateParks.find(currentpark => {
         
             return currentpark.id === event.detail.parkThatWasChosen
         })
@@ -30,12 +30,10 @@ eventHub.addEventListener('parkChosen', event => {
 
 const contentTarget = document.querySelector(".previewLeftContainer")
 
-const renderParks = (matchingParks) => {
+const renderParks = (singlePark) => {
     let parkHTMLRepresentations = ""
-    for (const singlePark of matchingParks) {
       parkHTMLRepresentations += Park(singlePark) 
-    }
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML += `
             <h3>${parkHTMLRepresentations}</h3>
           `
   }
