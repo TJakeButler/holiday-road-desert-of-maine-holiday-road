@@ -13,12 +13,13 @@ eventHub.addEventListener('attractionChosen', event => {
             Filter the criminals application state down to the people that committed the crime
         */
         const appAttractions = useAttractions()
-        const matchingAttractions = appAttractions.filter(currentAttraction => {
-        
-            return currentAttraction.id === event.detail.attractionThatWasChosen
-        })
-        console.log(event.detail.attractionThatWasChosen)
-        renderAttractions(matchingAttractions)
+        const singleAttraction = appAttractions.find(currentAttraction => {
+        console.log(currentAttraction)
+            return currentAttraction.id === parseInt(event.detail.attractionThatWasChosen)
+        }) 
+        // console.log(matchingAttractions)
+        // console.log(event.detail.attractionThatWasChosen)
+        renderAttractions(singleAttraction)
 
         /*
             Then invoke render() and pass the filtered collection as
@@ -27,13 +28,11 @@ eventHub.addEventListener('attractionChosen', event => {
     }
 })
 
-const contentTarget = document.querySelector(".attractionsDropDownContainer")
+const contentTarget = document.querySelector(".attractionContainer")
 
-const renderAttractions = (matchingAttractions) => {
+const renderAttractions = (singleAttraction) => {
     let attractionHTMLRepresentations = ""
-    for (const singleAttraction of matchingAttractions) {
       attractionHTMLRepresentations += Attraction(singleAttraction) 
-    }
     contentTarget.innerHTML += `
             <h3>${attractionHTMLRepresentations}</h3>
           `
