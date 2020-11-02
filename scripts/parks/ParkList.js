@@ -35,12 +35,13 @@ const renderParks = (matchingParks) => {
     for (const singlePark of matchingParks) {
       parkHTMLRepresentations += Park(singlePark) 
     }
-    contentTarget.innerHTML += `
+    contentTarget.innerHTML = `
             <h3>${parkHTMLRepresentations}</h3>
           `
   }
 
 //   Listen for the custom event you dispatched in ConvictionSelect
+<<<<<<< HEAD
 eventHub.addEventListener('detailButtonChosen', event => {
  
         const appParkDetails = useParks()
@@ -48,20 +49,21 @@ eventHub.addEventListener('detailButtonChosen', event => {
         const matchingParkDetails = appParkDetails.find(currentDetail => {
         
             return currentDetail.id === event.detail.detailThatWasShown
-        })
-        console.log(event.detail.detailThatWasShown)
-        console.log("ParkdetailObject",matchingParkDetails)
-        renderDetail(matchingParkDetails)
-
-        /*
-            Then invoke render() and pass the filtered collection as
-            an argument
-        */
+=======
+eventHub.addEventListener("detailButtonChosen", event => {
     
-})
+        const detailEvent = new CustomEvent("detailClicked", {
+            detail: {
+                detailThatWasChosen: event.target.value
+            }
+>>>>>>> master
+        })
+    })
+
+
 
 const renderDetail = (onePark) => {
     // const park = Park(onePark);
     // contentTarget.innerHTML = park;
     window.alert("Holiday Road")
-  };
+  }
