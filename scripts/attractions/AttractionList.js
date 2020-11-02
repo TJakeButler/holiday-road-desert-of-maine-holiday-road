@@ -27,7 +27,7 @@ eventHub.addEventListener('attractionChosen', event => {
     }
 })
 
-const contentTarget = document.querySelector(".attractionContainer")
+const contentTarget = document.querySelector(".attractionsDropDownContainer")
 
 const renderAttractions = (matchingAttractions) => {
     let attractionHTMLRepresentations = ""
