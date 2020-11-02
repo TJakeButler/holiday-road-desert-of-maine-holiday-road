@@ -41,22 +41,12 @@ const renderParks = (matchingParks) => {
   }
 
 //   Listen for the custom event you dispatched in ConvictionSelect
-<<<<<<< HEAD
-eventHub.addEventListener('detailButtonChosen', event => {
- 
-        const appParkDetails = useParks()
-        console.log(appParkDetails)
-        const matchingParkDetails = appParkDetails.find(currentDetail => {
-        
-            return currentDetail.id === event.detail.detailThatWasShown
-=======
 eventHub.addEventListener("detailButtonChosen", event => {
     
         const detailEvent = new CustomEvent("detailClicked", {
             detail: {
                 detailThatWasChosen: event.target.value
             }
->>>>>>> master
         })
     })
 

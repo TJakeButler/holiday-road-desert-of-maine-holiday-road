@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // import keys from "../Settings.js"
 
 let eateries = []
@@ -17,6 +15,5 @@ export const getEateries = () => {
     
 })
 }
->>>>>>> master
 
 
