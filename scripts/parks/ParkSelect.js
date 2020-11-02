@@ -1,11 +1,11 @@
 import { useParks , getParks } from "./ParkProvider.js"
 
-const contentTarget = document.querySelector(".dropDownContainer")
+const contentTarget = document.querySelector(".parkDropDownContainer")
 
 export const ParkSelect = () => {
     getParks().then(() => {
         const parks = useParks()
-        console.log(parks)
+        // console.log(parks)
         render(parks)
     })
 }
