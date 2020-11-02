@@ -42,12 +42,7 @@ const renderParks = (matchingParks) => {
 
 //   Listen for the custom event you dispatched in ConvictionSelect
 eventHub.addEventListener('detailButtonChosen', event => {
-    // Use the property you added to the event detail.
-    // if (event.detail.detailThatWasShown !== "0"){
-    //     console.log(event.detail)
-        /*
-            Filter the criminals application state down to the people that committed the crime
-        */
+ 
         const appParkDetails = useParks()
         console.log(appParkDetails)
         const matchingParkDetails = appParkDetails.find(currentDetail => {
