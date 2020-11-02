@@ -33,6 +33,7 @@ h1, h3 {
 .dropDownContainer {
     border: 1px solid;
     padding: 5px;
+    /* display: flex; */
 }
 
 .itineraryPreviewContainer {
@@ -61,4 +62,20 @@ h1, h3 {
 .eateryContainer {
     border: 1px solid;
     padding: 5px;
+}
+
+.bottomBar {
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+}
+
+.parkDropDownContainer {
+    flex-grow: 1;
+}
+.attractionDropDownContainer {
+    flex-grow: 1;
+}
+.eateryDropDownContainer {
+    flex-grow: 1;
 }
