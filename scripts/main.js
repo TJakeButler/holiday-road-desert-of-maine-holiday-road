@@ -5,6 +5,8 @@ import { getEateries, useEateries } from "./eateries/EateryProvider.js"
 import { EaterySelect } from "./eateries/EaterySelect.js"
 import { AttractionSelect } from "./attractions/AttractionSelect.js"
 import { getAttractions, useAttractions } from "./attractions/AttractionProvider.js"
+import "./eateries/EateriesList.js"
+
 
 AttractionSelect()
 ParkSelect()
