@@ -1,3 +1,5 @@
+// getItinerary() will fetch data from db.son and returned a parsed Itine
+
 const eventHub = document.querySelector(".container")
 
 let itinerary = []
@@ -12,7 +14,7 @@ export const getItinerary = () => {
 .then(response => response.json())
 .then (parsedItineraries => {
    itinerary = parsedItineraries
-    // console.log(parsedItineraries)
+    console.log(parsedItineraries)
 })
 }
 
@@ -28,11 +30,11 @@ export const SaveItinerary = (itineraryObj) => {
         body: JSON.stringify(itineraryObj)
     })
     .then(getItinerary)
-    // .then(dispatchItineraryChangeEvent)
+    .then(dispatchItineraryChangeEvent)
 }
 
 
-// const dispatchItineraryChangeEvent = () => {
-//     const itineraryChangedEvent = new CustomEvent("itineraryChanged")
-//     eventHub.dispatchEvent(itineraryChangedEvent)
-// }
+const dispatchItineraryChangeEvent = () => {
+    const itineraryChangedEvent = new CustomEvent("itineraryChanged")
+    eventHub.dispatchEvent(itineraryChangedEvent)
+}

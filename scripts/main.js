@@ -8,16 +8,19 @@ import { getAttractions, useAttractions } from "./attractions/AttractionProvider
 import "./eateries/EateriesList.js"
 import "./attractions/AttractionList.js"
 import "./itineraries/ItinerariesProvider.js"
-import { useItinerary, getItinerary } from "./itineraries/ItinerariesProvider.js"
+import { useItinerary, getItinerary, SaveItinerary } from "./itineraries/ItinerariesProvider.js"
+
+import "./itineraries/ItinerariesSaveButton.js"
 
 AttractionSelect()
 ParkSelect()
 EaterySelect()
-getItinerary().then(console.log(useItinerary()))
 
-// SaveItinerary({
-//     firstName: "Hello"
-// })
+getItinerary()
+
+
+
+
 
 
 
