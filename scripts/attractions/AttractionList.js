@@ -14,7 +14,7 @@ eventHub.addEventListener('attractionChosen', event => {
         */
         const appAttractions = useAttractions()
         const singleAttraction = appAttractions.find(currentAttraction => {
-        console.log(currentAttraction)
+        // console.log(currentAttraction)
             return currentAttraction.id === parseInt(event.detail.attractionThatWasChosen)
         }) 
         // console.log(matchingAttractions)
