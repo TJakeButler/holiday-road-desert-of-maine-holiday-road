@@ -10,6 +10,7 @@ import "./attractions/AttractionList.js"
 import "./itineraries/ItinerariesProvider.js"
 import { useItinerary, getItinerary, SaveItinerary } from "./itineraries/ItinerariesProvider.js"
 
+import "./itineraries/ItinerariesList.js"
 import "./itineraries/ItinerariesSaveButton.js"
 
 AttractionSelect()
